@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+    
+    
+    <style>
+      footer {
+    background-color: green ;
+color: white;
+}
+
+
+.main-footer h6 {
+    color:black /* Darker text for headings */
+}
+
+.main-footer p {
+    color: white /* Gray text for paragraphs */
+}
+
+.main-footer a {
+    color: #007bff; /* Bootstrap primary color for links */
+    text-decoration: none; /* Remove underline */
+}
+
+.main-footer a:hover {
+    text-decoration: underline; /* Add underline on hover */
+    color: gray;
+}
+
+footer .text-center {
+    background-color: rgba(0, 0, 0, 0.05); /* Light gray background for copyright */
+}
+
+
+        .row {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+  }
+  
+  .imgwrapper img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px; /* Optional: adds rounded corners */
+  }
+  
+  .contentwrapper {
+      max-width: 800px; /* Optional: limits width of content */
+      padding: 20px;
+      text-align: center;
+  }
+  
+  .content h2 {
+      margin-top: 10px;
+      font-size: 24px;
+  }
+  .content h3{
+      margin-top: 16px;
+      font-size: 24px;
+      
+  }
+  .content p {
+      font-size: 16px;
+      line-height: 1.5;
+  }
+  
+  .content a {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: green; /* Button background color */
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+  }
+  
+  .content a:hover {
+      background-color: grey; /* Darker shade on hover */
+  }
+  
+  /* Responsive Styles */
+  @media (min-width: 600px) {
+      .row {
+          flex-direction: row;
+          justify-content: space-between;
+      }
+  
+      .imgwrapper, .contentwrapper {
+          flex: 1;
+          margin: 10px;
+      }
+  
+      .imgwrapper {
+          max-width: 40%; /* Image takes up 40% of the row */
+      }
+  
+      .contentwrapper {
+          max-width: 50%; /* Content takes up 50% of the row */
+      }
+  }
+      </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="images/logo 1 (2).png" alt="Logo" style="width: 150px; height: 50px;">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="home.html">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="categories.html" id="categoriesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"  style="color: white;">Categories</a>
+                        <ul class="dropdown-menu" aria-labelledby="categoriesDropdown">
+                            <li><a class="dropdown-item" href="liveroom.html" style="color: white;">Living Room</a></li>
+                            <li><a class="dropdown-item" href="kitchen.html" style="color: white;" >Kitchen</a></li>
+                           
+                            <li><a class="dropdown-item" href="bedroom.html" style="color: white;">Bedroom</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Feedback.html" style="color: white;">Feedback</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html" style="color: white;">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html" style="color: white;">About</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="product.html" id="productDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"  style="color: white;">Product</a>
+                        <ul class="dropdown-menu" aria-labelledby="productDropdown">
+                           
+                            <li><a class="dropdown-item" href="furniture.html"   style="color: white;">Furniture</a></li>
+                            <li><a class="dropdown-item" href="lighting.html"  style="color: white;">Lighting</a></li>
+                           
+                            <li><a class="dropdown-item" href="decor.html"  style="color: white;">Decor</a></li>
+                            <li><a class="dropdown-item" href="prokitchen.html"  style="color: white;">Kitchen</a></li>
+                            <li><a class="dropdown-item" href="bathroom.html"  style="color: white;">Bathroom</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <form class="d-flex" aria-label="Product Search">
+                            <input class="form-control me-2" type="search" placeholder="Search Products" aria-label="Search">
+                            <button class="btn btn-outline-light" type="submit">Search</button>
+                        </form>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="row">
+        <div class="imgwrapper">
+            <img src="images/about.jpg" alt="About Us Image" />
+        </div>
+        <div class="contentwrapper">
+            <div class="content">
+                <h3>ABOUT US</h3>
+                <h2>Furniture Indoor Products</h2>
+                <p>Welcome to Home Styler! We’re dedicated to helping you bring your dream home to life, no matter your style or budget. Our platform is designed for everyone—from homeowners to professional designers—making it easy to explore and create beautiful spaces. Join our community of design enthusiasts, share your ideas, and get inspired by others. Let’s create beautiful homes together!</p>
+                <a href="categories.html";">Decorate Your House</a>
+            </div>
+        </div>
+    </div>
+   <!-- Footer -->
+   <footer class="text-center text-lg-start text-muted" style="background-color:green; ">
+    <!-- Section: Links  -->
+    <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom"></section>
+
+    <section class="main-footer">
+        <div class="container text-center text-md-start mt-5">
+            <div class="row mt-3">
+                <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                    <h6 class="text-uppercase fw-bold mb-4"><i class="fas fa-gem me-3"></i>HOMESTYLER</h6>
+                    <p>        At Homestyler, we believe that every space has the potential to be beautiful and functional. Our platform empowers you to unleash your creativity and transform your home into a reflection of your unique style. Whether you're a seasoned designer or a DIY enthusiast, Homestyler provides the tools you need to visualize your ideas and bring them to life.</p>
+                </div>
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4" style="display: flex; flex-direction: column; justify-content: flex-start; height: 310px;" >
+                    <h6 class="text-uppercase fw-bold mb-4">Products</h6>
+                    <p><a href="furniture.html" class="text-reset">Furniture</a></p>
+                    <p><a href="lighting.html" class="text-reset">Lighting</a></p>
+                    <p><a href="decor.html" class="text-reset">Decor</a></p>
+                    <p><a href="kitchen.html" class="text-reset">Kitchen</a></p>
+                    <p><a href="bathroom.html" class="text-reset">Bathroom</a></p>
+                </div>
+                <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4" style="display: flex; flex-direction: column; justify-content: flex-start; height: 310px;">
+                    <h6 class="text-uppercase fw-bold mb-4">Explore</h6>
+                    <p><a href="feedback.html" class="text-reset">Feedback</a></p>
+                    <p><a href="designstyle.html" class="text-reset">Categories</a></p>
+                    <p><a href="#!" class="text-reset">Gallery</a></p>
+                    <p><a href="home.html" class="text-reset">Home</a></p>
+                </div>
+                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4" style="display: flex; flex-direction: column; justify-content: flex-start; height: 310px;">
+                    <h6 class="text-uppercase fw-bold mb-4">Information</h6>
+                    <p><a href="contact.html" class="text-reset">Contact Us</a></p>
+                    <p><a href="about.html" class="text-reset">About Us</a></p>
+                    <p><a href="#!" class="text-reset">Reviews</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+ 
+</footer>
+<!-- Footer -->
+
+     <link rel="stylesheet" href="css/bootstrap.js">
+     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+</body>
+</html>

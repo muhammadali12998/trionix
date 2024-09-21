@@ -1,0 +1,1783 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Navbar</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+    
+
+</head>
+<style>
+    
+.card{
+    box-shadow: 0px 2px 5px black;
+    transition: transform 0.5s;
+    cursor: pointer;
+    
+
+}
+.card:hover{
+    transform: translate(-15px);
+}
+.productHolder
+{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10px;
+}
+.card{
+    cursor: pointer;
+    display: flex;
+    background-color: #d4cfb9;
+    flex-direction: column;
+    min-width: 200px;    
+    max-width: 300px;
+    text-align: center;
+    min-height: 370px;
+    border-radius: 1rem;
+    margin: 1.5rem;
+    transition: 0.3s;
+    height: 500px;
+    width: 500px;
+
+    &:hover{
+        transform: scale(1.1);
+       
+   }
+
+  
+   
+   .cardtext{
+    margin:0.srem;
+   }
+}
+
+
+</style>
+<body>
+<!-- product -->
+<nav class="navbar navbar-expand-lg navbar-dark">
+  <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+          <img src="images/logo 1 (2).png" alt="Logo" style="width: 150px; height: 50px;">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav mx-auto">
+              <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="home.html">Home</a>
+              </li>
+              <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="categories.html" id="categoriesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"  style="color: white;">Categories</a>
+                  <ul class="dropdown-menu" aria-labelledby="categoriesDropdown">
+                      <li><a class="dropdown-item" href="liveroom.html" style="color: white;">Living Room</a></li>
+                      <li><a class="dropdown-item" href="kitchen.html" style="color: white;">Kitchen</a></li>
+                     
+                      <li><a class="dropdown-item" href="bedroom.html" style="color: white;">Bedroom</a></li>
+                  </ul>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="Feedback.html" style="color: white;">Feedback</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="contact.html" style="color: white;">Contact</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="about.html" style="color: white;">About</a>
+              </li>
+              <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="product.html" id="productDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"  style="color: white;">Product</a>
+                  <ul class="dropdown-menu" aria-labelledby="productDropdown">
+                     
+                    <li><a class="dropdown-item" href="furniture.html"   style="color: white;">Furniture</a></li>
+                    <li><a class="dropdown-item" href="lighting.html"  style="color: white;">Lighting</a></li>
+                   
+                    <li><a class="dropdown-item" href="decor.html"  style="color: white;">Decor</a></li>
+                    <li><a class="dropdown-item" href="prokitchen.html"  style="color: white;">Kitchen</a></li>
+                    <li><a class="dropdown-item" href="bathroom.html"  style="color: white;">Bathroom</a></li>
+                  </ul>
+              </li>
+              <li class="nav-item">
+                  <form class="d-flex" aria-label="Product Search">
+                      <input class="form-control me-2" type="search" placeholder="Search Products" aria-label="Search">
+                      <button class="btn btn-outline-light" type="submit">Search</button>
+                  </form>
+              </li>
+          </ul>
+      </div>
+  </div>
+</nav>
+<!-- Filter Section -->
+<div class="filter-section">
+  <div class="container">
+      <div class="row mb-4">
+          <div class="col-lg-6">
+              <input type="text" class="form-control" placeholder="Search designs, styles, projects..." id="searchInput">
+          </div>
+          <div class="col-lg-3">
+              <select class="form-select" id="sortSelect">
+                  <option value="name">Sort by Name</option>
+                  <option value="price">Sort by Price</option>
+                  <option value="style">Sort by Style</option>
+              </select>
+          </div>
+          <div class="col-lg-3">
+              <button type="button" class="btn btn-custom w-100" data-bs-toggle="modal" data-bs-target="#filterModal">Filter</button>
+          </div>
+      </div>
+  </div>
+</div>
+
+<!-- Filter Modal -->
+<div class="modal fade" id="filterModal" tabindex="-1" aria-labelledby="filterModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h5 class="modal-title" id="filterModalLabel">Apply Filters</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+              <form id="filterForm">
+                  <div class="mb-3">
+                      <label for="filterPrice" class="form-label">Max Price</label>
+                      <input type="number" class="form-control" id="filterPrice" placeholder="Enter max price">
+                  </div>
+                  <div class="mb-3">
+                      <label for="filterStyle" class="form-label">Style</label>
+                      <select class="form-select" id="filterStyle">
+                          <option value="">Select style</option>
+                          <option value="Modern">Modern</option>
+                          <option value="bed">Bed</option>
+                      </select>
+                  </div>
+                  <button type="button" class="btn btn-custom" data-bs-dismiss="modal" onclick="applyFilters()">Apply</button>
+              </form>
+          </div>
+      </div>
+  </div>
+</div>
+
+
+<!-- furniture -->
+
+
+<h2 style="text-align: center;"><b>FURNITURE</b></h2>
+<H3 style="text-align: center;">BEDS & MATTRESES</H3>
+
+<div class="container">
+<div class="productHolder" id="designCards">
+  <!--bad-->
+  <div class="card">
+  <img src="images/BED/bed1.jpg" style="border-radius: 1rem;" alt="bed">
+ <div class="cardText"> 
+ <p class="categoryText">Square Bed </p>
+ <h2 class="brandtext">BED</h2>
+ <h5>⭐⭐⭐⭐ </h5>
+ <a href=""></a>
+ <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+</div>
+</div>
+
+
+<div class="card">
+  <img src="Images/BED/bed2.jpg" style="border-radius: 1rem;" alt="bed">
+ <div class="cardText"> 
+ <p class="categoryText">Square bed </p>
+ <h2 class="brandtext">BED</h2>
+ <h5>⭐⭐⭐⭐ </h5>
+ <a href="furniture.html"></a>
+ <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+</div>
+</div>
+
+
+<div class="card">
+  <img src="Images/BED/bed3.jpg" style="border-radius: 1rem;" alt="bed">
+ <div class="cardText"> 
+ <p class="categoryText">Rounded Bed </p>
+ <h2 class="brandtext">BED</h2>
+ <h5>⭐⭐⭐⭐ </h5>
+ <a href=""></a>
+ <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+</div>
+</div>
+
+<div class="card">
+  <img src="Images/BED/image 2.webp" style="border-radius: 1rem;" alt="bed">
+ <div class="cardText"> 
+ <p class="categoryText">Square Mattress</p>
+ <h2 class="brandtext">MATTRESS</h2>
+ <h5>⭐⭐⭐⭐ </h5>
+ <a href=""></a>
+ <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+</div>
+</div>
+
+
+<div class="card">
+  <img src="Images/BED/image 3.webp" style="border-radius: 1rem;" alt="bed">
+ <div class="cardText"> 
+ <p class="categoryText">Square Mattress </p>
+ <h2 class="brandtext">MATTRESS</h2>
+ <h5>⭐⭐⭐⭐ </h5>
+ <a href=""></a>
+ <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+</div>
+</div>
+
+
+<div class="card">
+  <img src="Images/BED/bed8.jpg" style="border-radius: 1rem; height: 400px;" alt="bed">
+ <div class="cardText"> 
+ <p class="categoryText">Round Mattress </p>
+ <h2 class="brandtext">MATTRESS</h2>
+ <h5>⭐⭐⭐⭐ </h5>
+ <a href=""></a>
+ <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+</div>
+</div>
+</div>                                                                                   
+<!--bad end-->
+<h3 style="text-align: center;"><b>CHAIRS & RECLINER</b></h3>
+<!--chair-->
+<div class="productHolder">
+<div class="card" data-style="bed" >
+  <img src="Images/chair/1.webp" style="border-radius: 1rem;" alt="bed">
+ <div class="cardText"> 
+ <p class="categoryText">Plastic Chair
+</p>
+ <h2 class="brandtext">CHAIR</h2>
+ <h5>⭐⭐⭐⭐ </h5>
+ <a href=""></a>
+ <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+</div>
+</div>
+
+
+<div class="card"data-style="bed">
+  <img src="Images/chair/2.webp" style="border-radius: 1rem;" alt="bed">
+ <div class="cardText"> 
+ <p class="categoryText">Wooden Chair  </p>
+ <h2 class="brandtext"> CHAIR</h2>
+ <h5>⭐⭐⭐⭐ </h5>
+ <a href=""></a>
+ <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+</div>
+</div>
+
+<div class="card" data-style="bed">
+  <img src="Images/chair/3.jfif" style="border-radius: 1rem;" alt="bed">
+ <div class="cardText"> 
+ <p class="categoryText">WOODEN CHAIR</p>
+ <h2 class="brandtext"> CHAIR </h2>
+ <h5>⭐⭐⭐⭐ </h5>
+ <a href=""></a>
+ <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+</div>
+</div>
+<div class="card" data-style="bed">
+  <img src="Images/chair/7.jpg" style="border-radius: 1rem; height: 400px;"  alt="bed">
+ <div class="cardText"> 
+ <p class="categoryText">Massage Reclyner</p>
+ <h2 class="brandtext">RECLYNERS</h2>
+ <h5>⭐⭐⭐⭐ </h5>
+ <a href=""></a>
+ <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+</div>
+</div>
+
+<div class="card" data-style="bed">
+  <img src="Images/chair/8.jpg" style="border-radius: 1rem;" alt="bed">
+ <div class="cardText"> 
+ <p class="categoryText">Well-designed Manual Recliner</p>
+ <h2 class="brandtext">RECLYNERS</h2>
+ <h5>⭐⭐⭐⭐ </h5>
+ <a href=""></a>
+ <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+</div>
+</div>
+<div class="card">
+  <img src="Images/chair/9.webp" style="border-radius: 1rem;" alt="bed">
+ <div class="cardText"> 
+ <p class="categoryText">Luxurious and well design reclyner </p>
+ <h2 class="brandtext">RECLYNERS</h2>
+ <h5>⭐⭐⭐⭐ </h5>
+ <a href=""></a>
+ <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+</div>
+</div>
+</div>
+<!--chair end-->
+<!--cabinet -->
+<h3 style="text-align: center;"><b>SOFAS & COUCHES</b></h3>
+
+<div class="productHolder">
+<div class="card">
+  <img src="Images/chair/sofa 1.jpg" style="border-radius: 1rem;" alt="bed">
+ <div class="cardText"> 
+ <p class="categoryText">L shape sofa </p>
+ <h2 class="brandtext">SOFA</h2>
+ <h5>⭐⭐⭐⭐ </h5>
+ <a href=""></a>
+ <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+</div>
+</div>
+
+
+<div class="card">
+  <img src="Images/chair/sofa 2.jpg" style="border-radius: 1rem;" alt="bed">
+ <div class="cardText"> 
+ <p class="categoryText">Comfort and glamour  Sofa.</p>
+ <h2 class="brandtext">SOFA</h2>
+ <h5>⭐⭐⭐⭐ </h5>
+ <a href=""></a>
+ <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+</div>
+</div>
+
+<div class="card">
+  <img src="Images/chair/sofa 3.jpg" style="border-radius: 1rem;" alt="bed">
+ <div class="cardText"> 
+ <p class="categoryText">French country style sofa   </p>
+ <h2 class="brandtext">SOFA</h2>
+ <h5>⭐⭐⭐⭐ </h5>
+ <a href=""></a>
+ <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+</div>
+</div>
+<div class="card">
+  <img src="Images/chair/couches 4.jpg" style="border-radius: 1rem; "  alt="bed">
+ <div class="cardText"> 
+ <p class="categoryText">Without Nailhead Trim Slipcovered </p>
+ <h2 class="brandtext">SOFA</h2>
+ <h5>⭐⭐⭐⭐ </h5>
+ <a href=""></a>
+ <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+</div>
+</div>
+
+<div class="card">
+  <img src="Images/chair/couches 5.avif" style="border-radius: 1rem;" alt="bed">
+ <div class="cardText"> 
+ <p class="categoryText"> Velvet upholstery and seating padding </p>
+ <h2 class="brandtext">SOFA</h2>
+ <h5>⭐⭐⭐⭐ </h5>
+ <a href=""></a>
+ <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+</div>
+</div>
+<div class="card">
+  <img src="Images/chair/couches 6.webp" style="border-radius: 1rem;" alt="bed">
+ <div class="cardText"> 
+ <p class="categoryText"> elegant and trendy</p>
+ <h2 class="brandtext">SOFA</h2>
+ <h5>⭐⭐⭐⭐ </h5>
+ <a href=""></a>
+ <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+</div>
+</div>
+</div>
+<!--cabnet end-->
+
+<h3 style="text-align: center;"><b>DINING TABLE & SIDE TABLE</b></h3>
+
+<div class="productHolder">
+<div class="card">
+   <img src="Images/chair/DINING 1.jpg" style="border-radius: 1rem;" alt="bed">
+  <div class="cardText"> 
+  <p class="categoryText"> metal look in bottom</p>
+  <h2 class="brandtext">DINNING TABLE</h2>
+  <h5>⭐⭐⭐⭐ </h5>
+  <a href=""></a>
+  <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+</div>
+</div>
+
+
+<div class="card">
+   <img src="Images/chair/Dining 2.webp" style="border-radius: 1rem;" alt="bed">
+  <div class="cardText"> 
+  <p class="categoryText"> Its round sintered stone tabletop </p>
+  <h2 class="brandtext">DINNING TABLE</h2>
+  <h5>⭐⭐⭐⭐ </h5>
+  <a href=""></a>
+  <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+</div>
+</div>
+
+<div class="card">
+   <img src="Images/chair/DINING 3.avif" style="border-radius: 1rem;" alt="bed">
+  <div class="cardText"> 
+  <p class="categoryText">6 seated table </p>
+  <h2 class="brandtext">DINNING TABLE</h2>
+  <h5>⭐⭐⭐⭐ </h5>
+  <a href=""></a>
+  <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+</div>
+</div>
+<div class="card">
+   <img src="Images/chair/side 4.webp" style="border-radius: 1rem; "  alt="bed">
+  <div class="cardText"> 
+  <p class="categoryText">corner table</p>
+  <h2 class="brandtext">
+     SIDE TABLE</h2>
+  <h5>⭐⭐⭐⭐ </h5>
+  <a href=""></a>
+  <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+</div>
+</div>
+
+<div class="card">
+   <img src="Images/chair/side 5.jfif" style="border-radius: 1rem;" alt="bed">
+  <div class="cardText"> 
+  <p class="categoryText">table with shelf</p>
+  <h2 class="brandtext">SIDE TABLE</h2>
+  <h5>⭐⭐⭐⭐ </h5>
+  <a href=""></a>
+  <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+</div>
+</div>
+<div class="card">
+   <img src="Images/chair/side 6.jpg" style="border-radius: 1rem;" alt="bed">
+  <div class="cardText"> 
+  <p class="categoryText">wood shelf table</p>
+  <h2 class="brandtext">SIDE TABLE</h2>
+  <h5>⭐⭐⭐⭐ </h5>
+  <a href=""></a>
+  <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+</div>
+</div>
+</div>
+
+
+<h3 style="text-align: center;"><b>CABINETS & DRESSERS</b></h3>
+
+<div class="productHolder">
+<div class="card">
+   <img src="Images/chair/KITCHEN 2.avif" style="border-radius: 1rem;" alt="bed">
+  <div class="cardText"> 
+  <p class="categoryText">wood brown cabinets</p> 
+  <h2 class="brandtext">CABINETS</h2>
+  <h5>⭐⭐⭐⭐ </h5>
+  <a href=""></a>
+  <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+</div>
+</div>
+
+
+<div class="card">
+   <img src="Images/chair/KITCHEN 33.webp" style="border-radius: 1rem;" alt="bed">
+  <div class="cardText"> 
+  <p class="categoryText">wood brown cabinets </p>
+  <h2 class="brandtext">CABINETS</h2>
+  <h5>⭐⭐⭐⭐ </h5>
+  <a href=""></a>
+  <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+</div>
+</div>
+
+<div class="card">
+   <img src="Images/chair/KITCHNEN 1.avif" style="border-radius: 1rem;" alt="bed">
+  <div class="cardText"> 
+  <p class="categoryText">blue shelf cabinet</p>
+  <h2 class="brandtext">CABINETS</h2>
+  <h5>⭐⭐⭐⭐ </h5>
+  <a href=""></a>
+  <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+</div>
+</div>
+<div class="card">
+   <img src="Images/chair/DRESSER 1.jpg" style="border-radius: 1rem; "  alt="bed">
+  <div class="cardText"> 
+  <p class="categoryText"> wood dresser</p>
+  <h2 class="brandtext">DRESSER</h2>
+  <h5>⭐⭐⭐⭐ </h5>
+  <a href=""></a>
+  <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+</div>
+</div>
+
+<div class="card">
+   <img src="Images/chair/DRESSER 2.png" style="border-radius: 1rem;" alt="bed">
+  <div class="cardText"> 
+  <p class="categoryText">white two corner </p>
+  <h2 class="brandtext">DRESSER</h2>
+  <h5>⭐⭐⭐⭐ </h5>
+  <a href=""></a>
+  <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+</div>
+</div>
+<div class="card">
+   <img src="Images/chair/DRESSER 3.webp" style="border-radius: 1rem;" alt="bed">
+  <div class="cardText"> 
+  <p class="categoryText">3 drawer dresser </p>
+  <h2 class="brandtext">DRESSER</h2>
+  <h5>⭐⭐⭐⭐ </h5>
+  <a href=""></a>
+  <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+</div>
+</div>
+</div>
+</div>
+<!--FURNITURE END-->
+<!--LIGHTS START-->
+<!--LIGHTS START-->
+<h2 style="text-align: center;"><b>LIGHTS</b></h2>
+
+<h3 style="text-align: center;"><b>CEILINGS LIGHTS</b></h3>
+<div class="container">
+<div class="productHolder">
+<div class="card">
+   <img src="Images/chair/ceilings 1.jpg" style="border-radius: 1rem;" alt="bed">
+  <div class="cardText"> 
+  <p class="categoryText">5 roundded light</p>
+  <h2 class="brandtext">CEILINGS LIGHTS</h2>
+  <h5>⭐⭐⭐⭐ </h5>
+  <a href="lighting.html"></a>
+  <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+</div>
+</div>
+
+
+<div class="card">
+   <img src="Images/chair/ceilings 2.jpg" style="border-radius: 1rem;" alt="bed">
+  <div class="cardText"> 
+  <p class="categoryText">square lights </p>
+  <h2 class="brandtext">CEILINGS LIGHTS</h2>
+  <h5>⭐⭐⭐⭐ </h5>
+  <a href=""></a>
+  <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+</div>
+</div>
+
+<div class="card">
+   <img src="Images/chair/ceilings 3.jpg" style="border-radius: 1rem;" alt="bed">
+  <div class="cardText"> 
+  <p class="categoryText">rounded lights </p>
+  <h2 class="brandtext">CEILINGS LIGHTS</h2>
+  <h5>⭐⭐⭐⭐ </h5>
+  <a href=""></a>
+  <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+</div>
+</div>
+<div class="card">
+   <img src="Images/chair/ceilings 4.jpg" style="border-radius: 1rem; "  alt="bed">
+  <div class="cardText"> 
+  <p class="categoryText">stars light on the top </p>
+  <h2 class="brandtext">CEILINGS LIGHTS</h2>
+  <h5>⭐⭐⭐⭐ </h5>
+  <a href=""></a>
+  <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+</div>
+</div>
+
+<div class="card">
+   <img src="Images/chair/ceilings 5.jfif" style="border-radius: 1rem;" alt="bed">
+  <div class="cardText"> 
+  <p class="categoryText">square shinning lights</p>
+  <h2 class="brandtext">CEILINGS LIGHTS</h2>
+  <h5>⭐⭐⭐⭐ </h5>
+  <a href=""></a>
+  <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+</div>
+</div>
+<div class="card">
+   <img src="Images/chair/ceilings 6.webp" style="border-radius: 1rem; height: 300px;" alt="bed">
+  <div class="cardText"> 
+  <p class="categoryText">lights on the top </p>
+  <h2 class="brandtext">CEILINGS LIGHTS</h2>
+  <h5>⭐⭐⭐⭐ </h5>
+  <a href=""></a>
+  <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+</div>
+</div>
+</div>
+
+<h3 style="text-align: center;"><b>WALLS LIGHTS</b></h3>
+
+<div class="productHolder">
+<div class="card">
+   <img src="Images/chair/walls 1.jfif" style="border-radius: 1rem;" alt="bed">
+  <div class="cardText"> 
+  <p class="categoryText">lights on the wall</p>
+  <h2 class="brandtext">WALLS LIGHTS</h2>
+  <h5>⭐⭐⭐⭐ </h5>
+  <a href=""></a>
+  <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+</div>
+</div>
+
+
+<div class="card">
+   <img src="Images/chair/walls2.jpg" style="border-radius: 1rem;" alt="bed">
+  <div class="cardText"> 
+  <p class="categoryText"> square shape light</p>
+  <h2 class="brandtext">WALLS LIGHTS</h2>
+  <h5>⭐⭐⭐⭐ </h5>
+  <a href=""></a>
+  <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+</div>
+</div>
+
+<div class="card">
+   <img src="Images/chair/walls 3.jpg" style="border-radius: 1rem;" alt="bed">
+  <div class="cardText"> 
+  <p class="categoryText">rounded shape light</p>
+  <h2 class="brandtext">WALLS LIGHTS</h2>
+  <h5>⭐⭐⭐⭐ </h5>
+  <a href=""></a>
+  <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+</div>
+</div>
+<div class="card">
+   <img src="Images/chair/walls 4.webp" style="border-radius: 1rem; "  alt="bed">
+  <div class="cardText"> 
+  <p class="categoryText"> square shaped light</p>
+  <h2 class="brandtext">WALLS LIGHTS</h2>
+  <h5>⭐⭐⭐⭐ </h5>
+  <a href=""></a>
+  <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+</div>
+</div>
+
+<div class="card">
+   <img src="Images/chair/walls 5.jpg" style="border-radius: 1rem;" alt="bed">
+  <div class="cardText"> 
+  <p class="categoryText">square shaped light on two walls</p>
+  <h2 class="brandtext">WALLS LIGHTS</h2>
+  <h5>⭐⭐⭐⭐ </h5>
+  <a href=""></a>
+  <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+</div>
+</div>
+<div class="card">
+   <img src="Images/chair/walls 6..webp" style="border-radius: 1rem; height: 300px;" alt="bed">
+  <div class="cardText"> 
+  <p class="categoryText"> square shaped light</p>
+  <h2 class="brandtext">WALLS LIGHTS</h2>
+  <h5>⭐⭐⭐⭐ </h5>
+  <a href=""></a>
+  <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+</div>
+</div>
+</div>
+<h3 style="text-align: center;"><b>FLOOR LAMPS</b></h3>
+
+<div class="productHolder">
+<div class="card">
+   <img src="Images/chair/FLOOR LAMPS.jfif" style="border-radius: 1rem;" alt="bed">
+  <div class="cardText"> 
+  <p class="categoryText">straight lamp</p>
+  <h2 class="brandtext">FLOOR LAMPS</h2>
+  <h5>⭐⭐⭐⭐ </h5>
+  <a href=""></a>
+  <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+</div>
+</div>
+
+
+<div class="card">
+   <img src="Images/chair/FLOOR LAMPS 2.jpg" style="border-radius: 1rem;" alt="bed">
+  <div class="cardText"> 
+  <p class="categoryText">curved lamp </p>
+  <h2 class="brandtext">FLOOR LAMPS</h2>
+  <h5>⭐⭐⭐⭐ </h5>
+  <a href=""></a>
+  <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+</div>
+</div>
+
+<div class="card">
+   <img src="Images/chair/FLOOR LAMPS 3.webp" style="border-radius: 1rem;" alt="bed">
+  <div class="cardText"> 
+  <p class="categoryText">curved lamp</p>
+  <h2 class="brandtext">FLOOR LAMPS</h2>
+  <h5>⭐⭐⭐⭐ </h5>
+  <a href=""></a>
+  <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+</div>
+</div>
+<div class="card">
+   <img src="Images/chair/FLOOR LAMPS 4.jpg" style="border-radius: 1rem; "  alt="bed">
+  <div class="cardText"> 
+  <p class="categoryText">straight with curved </p>
+  <h2 class="brandtext">FLOOR LAMPS</h2>
+  <h5>⭐⭐⭐⭐ </h5>
+  <a href=""></a>
+  <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+</div>
+</div>
+
+<div class="card">
+   <img src="Images/chair/FLOOR LAMPS 5.jpg" style="border-radius: 1rem;" alt="bed">
+  <div class="cardText"> 
+  <p class="categoryText">straight lamp </p>
+  <h2 class="brandtext">FLOOR LAMPS</h2>
+  <h5>⭐⭐⭐⭐ </h5>
+  <a href=""></a>
+  <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+</div>
+</div>
+<div class="card">
+   <img src="Images/chair/FLOOR LAMPS 6.jpg" style="border-radius: 1rem; height: 300px;" alt="bed">
+  <div class="cardText"> 
+  <p class="categoryText">straight and curved on the top</p>
+  <h2 class="brandtext">FLOOR LAMPS</h2>
+  <h5>⭐⭐⭐⭐ </h5>
+  <a href=""></a>
+  <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+</div>
+</div>
+</div>
+<h3 style="text-align: center;"><b>TABLE LAMPS</b></h3>
+
+<div class="productHolder">
+<div class="card">
+   <img src="Images/chair/T1.jpg" style="border-radius: 1rem;" alt="bed">
+  <div class="cardText"> 
+  <p class="categoryText">mirror lamp </p>
+  <h2 class="brandtext">TABLE LAMPS</h2>
+  <h5>⭐⭐⭐⭐ </h5>
+  <a href=""></a>
+  <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+</div>
+</div>
+
+
+<div class="card">
+   <img src="Images/chair/T2.jfif" style="border-radius: 1rem;" alt="bed">
+  <div class="cardText"> 
+  <p class="categoryText">glass lamp </p>
+  <h2 class="brandtext">TABLE LAMPS</h2>
+  <h5>⭐⭐⭐⭐ </h5>
+  <a href=""></a>
+  <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+</div>
+</div>
+
+<div class="card">
+   <img src="Images/chair/T3.jfif" style="border-radius: 1rem;" alt="bed">
+  <div class="cardText"> 
+  <p class="categoryText">metal lamp </p>
+  <h2 class="brandtext">TABLE LAMPS</h2>
+  <h5>⭐⭐⭐⭐ </h5>
+  <a href=""></a>
+  <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+</div>
+</div>
+<div class="card">
+   <img src="Images/chair/T4.jpg" style="border-radius: 1rem; "  alt="bed">
+  <div class="cardText"> 
+  <p class="categoryText">metal with glass </p>
+  <h2 class="brandtext">TABLE LAMPS</h2>
+  <h5>⭐⭐⭐⭐ </h5>
+  <a href=""></a>
+  <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+</div>
+</div>
+
+<div class="card">
+   <img src="Images/chair/T5.webp" style="border-radius: 1rem;" alt="bed">
+  <div class="cardText"> 
+  <p class="categoryText">plastic lamp </p>
+  <h2 class="brandtext">TABLE LAMPS</h2>
+  <h5>⭐⭐⭐⭐ </h5>
+  <a href=""></a>
+  <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+</div>
+</div>
+<div class="card">
+   <img src="Images/chair/T6.jpg" style="border-radius: 1rem; height: 300px;" alt="bed">
+  <div class="cardText"> 
+  <p class="categoryText">square and glass lamp </p>
+  <h2 class="brandtext">TABLE LAMPS</h2>
+  <h5>⭐⭐⭐⭐ </h5>
+  <a href=""></a>
+  <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+</div>
+</div>
+</div>
+<h3 style="text-align: center;"><b>OUTDOOR LIGHTS</b></h3>
+
+<div class="productHolder">
+<div class="card">
+   <img src="Images/chair/OUT 1.jpg" style="border-radius: 1rem;" alt="bed">
+  <div class="cardText"> 
+  <p class="categoryText">hanging lights  </p>
+  <h2 class="brandtext">OUTDOOR LIGHTS</h2>
+  <h5>⭐⭐⭐⭐ </h5>
+  <a href=""></a>
+  <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+</div>
+</div>
+
+
+<div class="card">
+   <img src="Images/chair/OUT 2.webp" style="border-radius: 1rem;" alt="bed">
+  <div class="cardText"> 
+  <p class="categoryText">hanging lights </p>
+  <h2 class="brandtext">OUTDOOR LIGHTS</h2>
+  <h5>⭐⭐⭐⭐ </h5>
+  <a href=""></a>
+  <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+</div>
+</div>
+
+<div class="card">
+   <img src="Images/chair/OUT 3.jpg" style="border-radius: 1rem;" alt="bed">
+  <div class="cardText"> 
+  <p class="categoryText">hanging lights  </p>
+  <h2 class="brandtext">OUTDOOR LIGHTS</h2>
+  <h5>⭐⭐⭐⭐ </h5>
+  <a href=""></a>
+  <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+</div>
+</div>
+<div class="card">
+   <img src="Images/chair/OUT 4.webp" style="border-radius: 1rem; "  alt="bed">
+  <div class="cardText"> 
+  <p class="categoryText"> floor lights</p>
+  <h2 class="brandtext">OUTDOOR LIGHTS</h2>
+  <h5>⭐⭐⭐⭐ </h5>
+  <a href=""></a>
+  <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+</div>
+</div>
+
+<div class="card">
+   <img src="Images/chair/OUT 5.webp" style="border-radius: 1rem;" alt="bed">
+  <div class="cardText"> 
+  <p class="categoryText">hanging lights</p>
+  <h2 class="brandtext">OUTDOOR LIGHTS</h2>
+  <h5>⭐⭐⭐⭐ </h5>
+  <a href=""></a>
+  <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+</div>
+</div>
+<div class="card">
+   <img src="Images/chair/OUT 6.jpg" style="border-radius: 1rem; height: 300px;" alt="bed">
+  <div class="cardText"> 
+  <p class="categoryText">floor lights </p>
+  <h2 class="brandtext">OUTDOOR LIGHTS</h2>
+  <h5>⭐⭐⭐⭐ </h5>
+  <a href=""></a>
+  <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+</div>
+</div>
+</div>
+<h2 style="text-align: center;"><B>DECOR</B></h2>\
+<h3 style="text-align: center;"><B>RUGS & CARPETS</B></h3>
+<div class="container">
+<div class="productHolder">
+<div class="card">
+  <img src="Images/chair/RUGS 1.jpg" style="border-radius: 1rem;" alt="bed">
+ <div class="cardText"> 
+ <p class="categoryText">soft texture</p>
+ <h2 class="brandtext">RUGS & CARPETS</h2>
+ <h5>⭐⭐⭐⭐ </h5>
+ <a href="decor.html"></a>
+ <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+</div>
+</div>
+
+
+<div class="card">
+  <img src="Images/chair/RUGS 2.jfif" style="border-radius: 1rem;" alt="bed">
+ <div class="cardText"> 
+ <p class="categoryText">skin rug </p>
+ <h2 class="brandtext">RUGS & CARPETS</h2>
+ <h5>⭐⭐⭐⭐ </h5>
+ <a href=""></a>
+ <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+</div>
+</div>
+
+<div class="card">
+  <img src="Images/chair/RUGS 3.jpg" style="border-radius: 1rem;" alt="bed">
+ <div class="cardText"> 
+ <p class="categoryText">fur grey </p>
+ <h2 class="brandtext">RUGS & CARPETS</h2>
+ <h5>⭐⭐⭐⭐ </h5>
+ <a href=""></a>
+ <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+</div>
+</div>
+<div class="card">
+  <img src="Images/chair/CARPET 1.jpg" style="border-radius: 1rem; "  alt="bed">
+ <div class="cardText"> 
+ <p class="categoryText">flower shaped </p>
+ <h2 class="brandtext">RUGS & CARPETS</h2>
+ <h5>⭐⭐⭐⭐ </h5>
+ <a href=""></a>
+ <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+</div>
+</div>
+
+<div class="card">
+  <img src="Images/chair/CARPET 2.jpg" style="border-radius: 1rem;" alt="bed">
+ <div class="cardText"> 
+ <p class="categoryText">zigzag carpet </p>
+ <h2 class="brandtext">RUGS & CARPETS</h2>
+ <h5>⭐⭐⭐⭐ </h5>
+ <a href=""></a>
+ <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+</div>
+</div>
+<div class="card">
+  <img src="Images/chair/CARPET 3.jpg" style="border-radius: 1rem; height: 300px;" alt="bed">
+ <div class="cardText"> 
+ <p class="categoryText">zigzag carpet </p>
+ <h2 class="brandtext">RUGS & CARPETS</h2>
+ <h5>⭐⭐⭐⭐ </h5>
+ <a href=""></a>
+ <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+</div>
+</div>
+</div>
+
+
+
+<H2 style="text-align: center;"><B>CURTAINS & BLINDS</B></H2>
+
+<div class="productHolder">
+<div class="card">
+  <img src="Images/chair/curtains 1.jpg" style="border-radius: 1rem;" alt="bed">
+ <div class="cardText"> 
+ <p class="categoryText">blue curtains</p>
+ <h2 class="brandtext">CURTAINS</h2>
+ <h5>⭐⭐⭐⭐ </h5>
+ <a href=""></a>
+ <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+</div>
+</div>
+
+
+<div class="card">
+  <img src="Images/chair/curtains 2.jpg" style="border-radius: 1rem;" alt="bed">
+ <div class="cardText"> 
+ <p class="categoryText">black and skin </p>
+ <h2 class="brandtext">CURTAINS</h2>
+ <h5>⭐⭐⭐⭐ </h5>
+ <a href=""></a>
+ <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+</div>
+</div>
+
+<div class="card">
+  <img src="Images/chair/curtains 3.jfif" style="border-radius: 1rem;" alt="bed">
+ <div class="cardText"> 
+ <p class="categoryText">skin with flower</p>
+ <h2 class="brandtext">CURTAINS</h2>
+ <h5>⭐⭐⭐⭐ </h5>
+ <a href=""></a>
+ <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+</div>
+</div>
+<div class="card">
+  <img src="Images/chair/blinds 1.jpg" style="border-radius: 1rem; "  alt="bed">
+ <div class="cardText"> 
+ <p class="categoryText">black blinds</p>
+ <h2 class="brandtext">BLINDS</h2>
+ <h5>⭐⭐⭐⭐ </h5>
+ <a href=""></a>
+ <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+</div>
+</div>
+
+<div class="card">
+  <img src="Images/chair/blinds 2.webp" style="border-radius: 1rem;" alt="bed">
+ <div class="cardText"> 
+ <p class="categoryText">white blinds </p>
+ <h2 class="brandtext">BLINDS</h2>
+ <h5>⭐⭐⭐⭐ </h5>
+ <a href=""></a>
+ <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+</div>
+</div>
+<div class="card">
+  <img src="Images/chair/blinds 3.jpg" style="border-radius: 1rem; height: 300px;" alt="bed">
+ <div class="cardText"> 
+ <p class="categoryText">vertically adjust blinds</p>
+ <h2 class="brandtext">CBLINDS</h2>
+ <h5>⭐⭐⭐⭐ </h5>
+ <a href=""></a>
+ <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+</div>
+</div>
+</div>
+
+
+<H2 style="text-align: center;"><B>CUSHIONS & THROWS</B></H2>
+
+<div class="productHolder">
+<div class="card">
+  <img src="Images/chair/cushions 1.jfif" style="border-radius: 1rem;" alt="bed">
+ <div class="cardText"> 
+ <p class="categoryText">lawn with flower </p>
+ <h2 class="brandtext">CUSHIONS</h2>
+ <h5>⭐⭐⭐⭐ </h5>
+ <a href=""></a>
+ <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+</div>
+</div>
+
+
+<div class="card">
+  <img src="Images/chair/cushions 2.jpg" style="border-radius: 1rem;" alt="bed">
+ <div class="cardText"> 
+ <p class="categoryText">cotton with flower</p>
+ <h2 class="brandtext">CUSHIONS</h2>
+ <h5>⭐⭐⭐⭐ </h5>
+ <a href=""></a>
+ <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+</div>
+</div>
+
+<div class="card">
+  <img src="Images/chair/cushions 3.jfif" style="border-radius: 1rem;" alt="bed">
+ <div class="cardText"> 
+ <p class="categoryText">cotton lawn</p>
+ <h2 class="brandtext">CUSHIONS</h2>
+ <h5>⭐⭐⭐⭐ </h5>
+ <a href=""></a>
+ <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+</div>
+</div>
+<div class="card">
+  <img src="Images/chair/THROWS 3.jpg" style="border-radius: 1rem; "  alt="bed">
+ <div class="cardText"> 
+ <p class="categoryText">skin warm </p>
+ <h2 class="brandtext">THROWS</h2>
+ <h5>⭐⭐⭐⭐ </h5>
+ <a href=""></a>
+ <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+</div>
+</div>
+
+<div class="card">
+  <img src="Images/chair/THROWS.jpg" style="border-radius: 1rem;" alt="bed">
+ <div class="cardText"> 
+ <p class="categoryText">peach light </p>
+ <h2 class="brandtext">DTHROWS</h2>
+ <h5>⭐⭐⭐⭐ </h5>
+ <a href=""></a>
+ <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+</div>
+</div>
+<div class="card">
+  <img src="Images/chair/THROWS 2.jpg" style="border-radius: 1rem; height: 300px;" alt="bed">
+ <div class="cardText"> 
+ <p class="categoryText">gray dark </p>
+ <h2 class="brandtext">THROWS</h2>
+ <h5>⭐⭐⭐⭐ </h5>
+ <a href=""></a>
+ <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+</div>
+</div>
+</div>
+
+
+
+
+<H2 style="text-align: center;"><B>VASES & PLANT POTS</B></H2>
+<div class="productHolder">
+<div class="card">
+  <img src="Images/chair/vases 1.jpg" style="border-radius: 1rem;" alt="bed">
+ <div class="cardText"> 
+ <p class="categoryText">glass vase</p>
+ <h2 class="brandtext">VASES</h2>
+ <h5>⭐⭐⭐⭐ </h5>
+ <a href=""></a>
+ <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+</div>
+</div>
+
+
+<div class="card">
+  <img src="Images/chair/vases 2.jpg" style="border-radius: 1rem;" alt="bed">
+ <div class="cardText"> 
+ <p class="categoryText">multi flowers </p>
+ <h2 class="brandtext">VASES</h2>
+ <h5>⭐⭐⭐⭐ </h5>
+ <a href=""></a>
+ <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+</div>
+</div>
+
+<div class="card">
+  <img src="Images/chair/vases 3.jpg" style="border-radius: 1rem;" alt="bed">
+ <div class="cardText"> 
+ <p class="categoryText">flower vase </p>
+ <h2 class="brandtext">VASES</h2>
+ <h5>⭐⭐⭐⭐ </h5>
+ <a href=""></a>
+ <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+</div>
+</div>
+<div class="card">
+  <img src="Images/chair/pots 1.jfif" style="border-radius: 1rem; "  alt="bed">
+ <div class="cardText"> 
+ <p class="categoryText">green plants</p>
+ <h2 class="brandtext">PLANT POTS </h2>
+ <h5>⭐⭐⭐⭐ </h5>
+ <a href=""></a>
+ <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+</div>
+</div>
+
+<div class="card">
+  <img src="Images/chair/pots 2.jpg" style="border-radius: 1rem; " alt="bed">
+ <div class="cardText"> 
+ <p class="categoryText">green plants </p>
+ <h2 class="brandtext">PLANT POTS</h2>
+ <h5>⭐⭐⭐⭐ </h5>
+ <a href=""></a>
+ <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+</div>
+</div>
+<div class="card">
+  <img src="Images/chair/pots 3.jpg" style="border-radius: 1rem; height: 300px;" alt="bed">
+ <div class="cardText"> 
+ <p class="categoryText">PLANT POTS </p>
+ <h2 class="brandtext">green plants</h2>
+ <h5>⭐⭐⭐⭐ </h5>
+ <a href=""></a>
+ <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+</div>
+</div>
+</div> 
+</div>
+
+
+
+
+
+
+<h2 style="text-align: center;"><B>KITCHEN</B></h2>
+    <h3 style="text-align: center;"><B>CABINETS & PANTRIES</B></h3>
+    <div class="container">
+    <div class="productHolder">
+    <div class="card">
+      <img src="Images/chair/CABINETS 1.webp" style="border-radius: 1rem;" alt="bed">
+     <div class="cardText"> 
+     <p class="categoryText">white with metal  </p>
+     <h2 class="brandtext">CABINETS </h2>
+     <h5>⭐⭐⭐⭐ </h5>
+     <a href="prokitchen.html"></a>
+     <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+    </div>
+    </div>
+    
+    
+    <div class="card">
+      <img src="Images/chair/CABINETS 2.webp" style="border-radius: 1rem;" alt="bed">
+     <div class="cardText"> 
+     <p class="categoryText">grey with metal</p> 
+     <h2 class="brandtext">CABINETS</h2>
+     <h5>⭐⭐⭐⭐ </h5>
+     <a href=""></a>
+     <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+    </div>
+    </div>
+    
+    <div class="card">
+      <img src="Images/chair/CABINETS 3.avif" style="border-radius: 1rem;" alt="bed">
+     <div class="cardText"> 
+     <p class="categoryText">wood cabinets </p>
+     <h2 class="brandtext">CABINETS</h2>
+     <h5>⭐⭐⭐⭐ </h5>
+     <a href=""></a>
+     <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+    </div>
+    </div>
+    <div class="card">
+      <img src="Images/chair/PANTRY 1.jpg" style="border-radius: 1rem; "  alt="bed">
+     <div class="cardText"> 
+     <p class="categoryText">drawer with shelf </p>
+     <h2 class="brandtext">PANTRIES</h2>
+     <h5>⭐⭐⭐⭐ </h5>
+     <a href=""></a>
+     <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+    </div>
+    </div>
+    
+    <div class="card">
+      <img src="Images/chair/PANTRY 2.jfif" style="border-radius: 1rem; " alt="bed">
+     <div class="cardText"> 
+     <p class="categoryText">shelf pentry </p>
+     <h2 class="brandtext">PANTRIES</h2>
+     <h5>⭐⭐⭐⭐ </h5>
+     <a href=""></a>
+     <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+    </div>
+    </div>
+    <div class="card">
+      <img src="Images/chair/PANTRY 3.jpg" style="border-radius: 1rem; height: 300px;" alt="bed">
+     <div class="cardText"> 
+     <p class="categoryText">shelf pentry </p>
+     <h2 class="brandtext">PANTRIES</h2>
+     <h5>⭐⭐⭐⭐ </h5>
+     <a href=""></a>
+     <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+    </div>
+    </div>
+    </div>
+    
+    
+    <H2 style="text-align: center;"><B>COUNTERTOPS & BACKSPLASHES</B></H2>
+    <div class="productHolder">
+    <div class="card">
+      <img src="Images/chair/COPUNTERTOPS 1.jpg" style="border-radius: 1rem;" alt="bed">
+     <div class="cardText"> 
+     <p class="categoryText">peach countertop </p>
+     <h2 class="brandtext">COUNTERTOPS</h2>
+     <h5>⭐⭐⭐⭐ </h5>
+     <a href=""></a>
+     <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+    </div>
+    </div>
+    
+    
+    <div class="card">
+      <img src="Images/chair/COUNTERTOPS 2.jpg" style="border-radius: 1rem;" alt="bed">
+     <div class="cardText"> 
+     <p class="categoryText"> white countertop </p>
+     <h2 class="brandtext">COUNTERTOPS</h2>
+     <h5>⭐⭐⭐⭐ </h5>
+     <a href=""></a>
+     <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+    </div>
+    </div>
+    
+    <div class="card">
+      <img src="Images/chair/COUNTERTOPS 3.jpg" style="border-radius: 1rem;" alt="bed">
+     <div class="cardText"> 
+     <p class="categoryText">white countertop </p>
+     <h2 class="brandtext">COUNTERTOPS</h2>
+     <h5>⭐⭐⭐⭐ </h5>
+     <a href=""></a>
+     <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+    </div>
+    </div>
+    <div class="card">
+      <img src="Images/chair/BACK 1.jpg" style="border-radius: 1rem; "  alt="bed">
+     <div class="cardText"> 
+     <p class="categoryText">white blacksplash </p>
+     <h2 class="brandtext">BACKSPLASHES</h2>
+     <h5>⭐⭐⭐⭐ </h5>
+     <a href=""></a>
+     <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+    </div>
+    </div>
+    
+    <div class="card">
+      <img src="Images/chair/BACK 2.webp" style="border-radius: 1rem; " alt="bed">
+     <div class="cardText"> 
+     <p class="categoryText">grey blacksplash</p>
+     <h2 class="brandtext">BACKSPLASHES</h2>
+     <h5>⭐⭐⭐⭐ </h5>
+     <a href=""></a>
+     <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+    </div>
+    </div>
+    <div class="card">
+      <img src="Images/chair/BACK 3.jfif" style="border-radius: 1rem; height: 300px;" alt="bed">
+     <div class="cardText"> 
+     <p class="categoryText">peach and grey </p>
+     <h2 class="brandtext">DBACKSPLASHES</h2>
+     <h5>⭐⭐⭐⭐ </h5>
+     <a href=""></a>
+     <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+    </div>
+    </div>
+    </div>
+    
+    <H2 style="text-align: center;"><B>SINKS & FAUCETS</B></H2>
+    <div class="productHolder">
+    <div class="card">
+      <img src="Images/chair/SINK 1.jpg" style="border-radius: 1rem;" alt="bed">
+     <div class="cardText"> 
+     <p class="categoryText">grey sink </p>
+     <h2 class="brandtext">SINKS</h2>
+     <h5>⭐⭐⭐⭐ </h5>
+     <a href=""></a>
+     <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+    </div>
+    </div>
+    
+    
+    <div class="card">
+      <img src="Images/chair/SINK 2.jpg" style="border-radius: 1rem;" alt="bed">
+     <div class="cardText"> 
+     <p class="categoryText">silver sink </p>
+     <h2 class="brandtext">SINKS</h2>
+     <h5>⭐⭐⭐⭐ </h5>
+     <a href=""></a>
+     <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+    </div>
+    </div>
+    
+    <div class="card">
+      <img src="Images/chair/SINK 3.jpg" style="border-radius: 1rem;" alt="bed">
+     <div class="cardText"> 
+     <p class="categoryText">grey sink </p>
+     <h2 class="brandtext">SINKS</h2>
+     <h5>⭐⭐⭐⭐ </h5>
+     <a href=""></a>
+     <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+    </div>
+    </div>
+    <div class="card">
+      <img src="Images/chair/F 1.avif" style="border-radius: 1rem; "  alt="bed">
+     <div class="cardText"> 
+     <p class="categoryText">silver with side 2 taps</p>
+     <h2 class="brandtext">FAUCETS</h2>
+     <h5>⭐⭐⭐⭐ </h5>
+     <a href=""></a>
+     <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+    </div>
+    </div>
+    
+    <div class="card">
+      <img src="Images/chair/F 2.jpg" style="border-radius: 1rem; " alt="bed">
+     <div class="cardText"> 
+     <p class="categoryText">black faucet</p>
+     <h2 class="brandtext">FAUCETS</h2>
+     <h5>⭐⭐⭐⭐ </h5>
+     <a href=""></a>
+     <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+    </div>
+    </div>
+    <div class="card">
+      <img src="Images/chair/F 3.webp" style="border-radius: 1rem; height: 300px;" alt="bed">
+     <div class="cardText"> 
+     <p class="categoryText">white and silver</p>
+     <h2 class="brandtext">FAUCETS</h2>
+     <h5>⭐⭐⭐⭐ </h5>
+     <a href=""></a>
+     <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+    </div>
+    </div>
+    </div>
+  </div>
+
+  <h2 style="text-align: center;"><B>BATHROOM</B></h2>\
+  <h3 style="text-align: center;"><B>VANITIES & CABINETS</B></h3>
+  <div class="container">
+  <div class="productHolder">
+  <div class="card">
+    <img src="Images/chair/VANTY 1.webp" style="border-radius: 1rem;" alt="bed">
+   <div class="cardText"> 
+   <p class="categoryText">broen and white </p>
+   <h2 class="brandtext">VANITIES</h2>
+   <h5>⭐⭐⭐⭐ </h5>
+   <a href="bathroom.html"></a>
+   <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+  </div>
+  </div>
+  
+  
+  <div class="card">
+    <img src="Images/chair/VANTY 2.avif" style="border-radius: 1rem;" alt="bed">
+   <div class="cardText"> 
+   <p class="categoryText">pink with drawer</p>
+   <h2 class="brandtext">VANITIES</h2>
+   <h5>⭐⭐⭐⭐ </h5>
+   <a href=""></a>
+   <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+  </div>
+  </div>
+  
+  <div class="card">
+    <img src="Images/chair/VANTY 3.jpg" style="border-radius: 1rem;" alt="bed">
+   <div class="cardText"> 
+   <p class="categoryText">rounded with drawer</p>
+   <h2 class="brandtext">VANITIES</h2>
+   <h5>⭐⭐⭐⭐ </h5>
+   <a href=""></a>
+   <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+  </div>
+  </div>
+  <div class="card">
+    <img src="Images/chair/C1.jfif" style="border-radius: 1rem; "  alt="bed">
+   <div class="cardText"> 
+   <p class="categoryText">wood brown </p>
+   <h2 class="brandtext">CABINETS</h2>
+   <h5>⭐⭐⭐⭐ </h5>
+   <a href=""></a>
+   <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+  </div>
+  </div>
+  
+  <div class="card">
+    <img src="Images/chair/C2.webp" style="border-radius: 1rem; " alt="bed">
+   <div class="cardText"> 
+   <p class="categoryText">white with drawer</p>
+   <h2 class="brandtext">CABINETS</h2>
+   <h5>⭐⭐⭐⭐ </h5>
+   <a href=""></a>
+   <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+  </div>
+  </div>
+  <div class="card">
+    <img src="Images/chair/C3.webp" style="border-radius: 1rem; height: 300px;" alt="bed">
+   <div class="cardText"> 
+   <p class="categoryText">shelves and drawer </p>
+   <h2 class="brandtext">CABINETS</h2>
+   <h5>⭐⭐⭐⭐ </h5>
+   <a href=""></a>
+   <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+  </div>
+  </div>
+  </div>
+  
+  
+  
+  <H2 style="text-align: center;"><B>SHOWERS & BATHTUBS</B></H2>
+  <div class="productHolder">
+  <div class="card">
+    <img src="Images/chair/SHOWER 1.webp" style="border-radius: 1rem;" alt="bed">
+   <div class="cardText"> 
+   <p class="categoryText">brounded curved </p>
+   <h2 class="brandtext">SHOWER</h2>
+   <h5>⭐⭐⭐⭐ </h5>
+   <a href=""></a>
+   <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+  </div>
+  </div>
+  
+  
+  <div class="card">
+    <img src="Images/chair/SHOWER 2.jpg" style="border-radius: 1rem;" alt="bed">
+   <div class="cardText"> 
+   <p class="categoryText">ceiling shower </p>
+   <h2 class="brandtext">SHOWER</h2>
+   <h5>⭐⭐⭐⭐ </h5>
+   <a href=""></a>
+   <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+  </div>
+  </div>
+  
+  <div class="card">
+    <img src="Images/chair/SHOWER 3.jpg" style="border-radius: 1rem;" alt="bed">
+   <div class="cardText"> 
+   <p class="categoryText">ceiling shower</p>
+   <h2 class="brandtext">SHOWER</h2>
+   <h5>⭐⭐⭐⭐ </h5>
+   <a href=""></a>
+   <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+  </div>
+  </div>
+  <div class="card">
+    <img src="Images/chair/BT 1.webp" style="border-radius: 1rem; "  alt="bed">
+   <div class="cardText"> 
+   <p class="categoryText">plastic white </p>
+   <h2 class="brandtext">BATHTUB</h2>
+   <h5>⭐⭐⭐⭐ </h5>
+   <a href=""></a>
+   <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+  </div>
+  </div>
+  
+  <div class="card">
+    <img src="Images/chair/BT 2.jpg" style="border-radius: 1rem; " alt="bed">
+   <div class="cardText"> 
+   <p class="categoryText">stone blue </p>
+   <h2 class="brandtext">BATHTUB</h2>
+   <h5>⭐⭐⭐⭐ </h5>
+   <a href=""></a>
+   <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+  </div>
+  </div>
+  <div class="card">
+    <img src="Images/chair/BT 3.jfif" style="border-radius: 1rem; height: 300px;" alt="bed">
+   <div class="cardText"> 
+   <p class="categoryText">stone white </p>
+   <h2 class="brandtext">BATHTUB</h2>
+   <h5>⭐⭐⭐⭐ </h5>
+   <a href=""></a>
+   <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+  </div>
+  </div>
+  </div>
+  
+  
+  <H2 style="text-align: center;"><B>TOILETS & BIDETS</B></H2>
+  <div class="productHolder">
+  <div class="card">
+    <img src="Images/chair/TOILET 1.jpg" style="border-radius: 1rem;" alt="bed">
+   <div class="cardText"> 
+   <p class="categoryText">white rounded </p>
+   <h2 class="brandtext">TOILETS</h2>
+   <h5>⭐⭐⭐⭐ </h5>
+   <a href=""></a>
+   <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+  </div>
+  </div>
+  
+  
+  <div class="card">
+    <img src="Images/chair/TOILET 23.jpeg" style="border-radius: 1rem;" alt="bed">
+   <div class="cardText"> 
+   <p class="categoryText">white rounded </p>
+   <h2 class="brandtext">TOILETS</h2>
+   <h5>⭐⭐⭐⭐ </h5>
+   <a href=""></a>
+   <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+  </div>
+  </div>
+  
+  <div class="card">
+    <img src="Images/chair/TOILET 3.jpg" style="border-radius: 1rem;" alt="bed">
+   <div class="cardText"> 
+   <p class="categoryText">white rounded</p>
+   <h2 class="brandtext">TOILETS</h2>
+   <h5>⭐⭐⭐⭐ </h5>
+   <a href=""></a>
+   <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+  </div>
+  </div>
+  <div class="card">
+    <img src="Images/chair/BIDTES.jpg" style="border-radius: 1rem; "  alt="bed">
+   <div class="cardText"> 
+   <p class="categoryText">rounded white with 2 taps</p>
+   <h2 class="brandtext">BIDETS</h2>
+   <h5>⭐⭐⭐⭐ </h5>
+   <a href=""></a>
+   <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+  </div>
+  </div>
+  
+  <div class="card">
+    <img src="Images/chair/BIDETS 2.jfif" style="border-radius: 1rem; " alt="bed">
+   <div class="cardText"> 
+   <p class="categoryText">rounded white</p>
+   <h2 class="brandtext">BIDETS</h2>
+   <h5>⭐⭐⭐⭐ </h5>
+   <a href=""></a>
+   <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+  </div>
+  </div>
+  <div class="card">
+    <img src="Images/chair/BIDETS 3.webp" style="border-radius: 1rem; height: 300px;" alt="bed">
+   <div class="cardText"> 
+   <p class="categoryText">rounded white with 1 tap</p>
+   <h2 class="brandtext">BIDETS</h2>
+   <h5>⭐⭐⭐⭐ </h5>
+   <a href=""></a>
+   <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+  </div>
+  </div>
+  </div>
+  
+  
+  <H2 style="text-align: center;"><B>BATHROOM SINKS</B></H2>
+  <div class="productHolder">
+  <div class="card">
+    <img src="Images/chair/SINKS 1.jpg" style="border-radius: 1rem;" alt="bed">
+   <div class="cardText"> 
+   <p class="categoryText">rounded black</p>
+   <h2 class="brandtext">BATHROOM SINKS</h2>
+   <h5>⭐⭐⭐⭐ </h5>
+   <a href=""></a>
+   <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+  </div>
+  </div>
+  
+  
+  <div class="card">
+    <img src="Images/chair/SINKS 23.jfif" style="border-radius: 1rem;" alt="bed">
+   <div class="cardText"> 
+   <p class="categoryText">square black</p>
+   <h2 class="brandtext">BATHROOM SINKS</h2>
+   <h5>⭐⭐⭐⭐ </h5>
+   <a href=""></a>
+   <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+  </div>
+  </div>
+  
+  <div class="card">
+    <img src="Images/chair/SINKS 4.jpg" style="border-radius: 1rem;" alt="bed">
+   <div class="cardText"> 
+   <p class="categoryText">rounded white </p>
+   <h2 class="brandtext">BATHROOM SINKS</h2>
+   <h5>⭐⭐⭐⭐ </h5>
+   <a href=""></a>
+   <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+  </div>
+  </div>
+  <div class="card">
+    <img src="Images/chair/SINKS 5.jpg" style="border-radius: 1rem; "  alt="bed">
+   <div class="cardText"> 
+   <p class="categoryText">square with brown</p>
+   <h2 class="brandtext">BATHROOM SINKS</h2>
+   <h5>⭐⭐⭐⭐ </h5>
+   <a href=""></a>
+   <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+  </div>
+  </div>
+  
+  <div class="card">
+    <img src="Images/chair/SINKS 6.webp" style="border-radius: 1rem; " alt="bed">
+   <div class="cardText"> 
+   <p class="categoryText">square with white </p>
+   <h2 class="brandtext">BATHROOM SINKS</h2>
+   <h5>⭐⭐⭐⭐ </h5>
+   <a href=""></a>
+   <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+  </div>
+  </div>
+  <div class="card">
+    <img src="Images/chair/SINKS 3.jfif" style="border-radius: 1rem; height: 300px;" alt="bed">
+   <div class="cardText"> 
+   <p class="categoryText">square blue </p>
+   <h2 class="brandtext">BATHROOM SINKS</h2>
+   <h5>⭐⭐⭐⭐ </h5>
+   <a href=""></a>
+   <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+  </div>
+  </div>
+  </div>
+  
+  
+  <H2 style="text-align: center;"><B>MIRRORS & MEDICINE CABINETS</B></H2>
+  <div class="productHolder">
+  <div class="card">
+    <img src="Images/chair/MIR 1.webp" style="border-radius: 1rem;" alt="bed">
+   <div class="cardText"> 
+   <p class="categoryText">square with black borders</p>
+   <h2 class="brandtext">MIRRORS</h2>
+   <h5>⭐⭐⭐⭐ </h5>
+   <a href=""></a>
+   <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+  </div>
+  </div>
+  
+  
+  <div class="card">
+    <img src="Images/chair/MIR 2.jpg" style="border-radius: 1rem;" alt="bed">
+   <div class="cardText"> 
+   <p class="categoryText">white mirror </p>
+   <h2 class="brandtext">MIRRORS</h2>
+   <h5>⭐⭐⭐⭐ </h5>
+   <a href=""></a>
+   <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+  </div>
+  </div>
+  
+  <div class="card">
+    <img src="Images/chair/MIR 3.jpg" style="border-radius: 1rem;" alt="bed">
+   <div class="cardText"> 
+   <p class="categoryText">square with silver sides  </p>
+   <h2 class="brandtext">MIRRORS</h2>
+   <h5>⭐⭐⭐⭐ </h5>
+   <a href=""></a>
+   <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+  </div>
+  </div>
+  <div class="card">
+    <img src="Images/chair/MC 1.jpg" style="border-radius: 1rem; "  alt="bed">
+   <div class="cardText"> 
+   <p class="categoryText">2 side cabinets </p>
+   <h2 class="brandtext">MEDICINE CABINETS</h2>
+   <h5>⭐⭐⭐⭐ </h5>
+   <a href=""></a>
+   <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+  </div>
+  </div>
+  
+  <div class="card">
+    <img src="Images/chair/MC 2.webp" style="border-radius: 1rem; " alt="bed">
+   <div class="cardText"> 
+   <p class="categoryText">3 cabinets side by side </p>
+   <h2 class="brandtext">MEDICINE CABINETS</h2>
+   <h5>⭐⭐⭐⭐ </h5>
+   <a href=""></a>
+   <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+  </div>
+  </div>
+  <div class="card">
+    <img src="Images/chair/MC 3.jpg" style="border-radius: 1rem; height: 300px;" alt="bed">
+   <div class="cardText"> 
+   <p class="categoryText">2 side cabinets</p>
+   <h2 class="brandtext">MEDICINE CABINETS</h2>
+   <h5>⭐⭐⭐⭐ </h5>
+   <a href=""></a>
+   <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+  </div>
+  </div>
+  </div>
+</div>
+ <!-- Footer -->
+  <div class="container-fluid">
+ <footer class="text-center text-lg-start text-muted" style="background-color:green; ">
+  <!-- Section: Links  -->
+  <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom"></section>
+
+  <section class="main-footer">
+      <div class="container text-center text-md-start mt-5">
+          <div class="row mt-3">
+              <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                  <h6 class="text-uppercase fw-bold mb-4"><i class="fas fa-gem me-3"></i>HOMESTYLER</h6>
+                  <p>        At Homestyler, we believe that every space has the potential to be beautiful and functional. Our platform empowers you to unleash your creativity and transform your home into a reflection of your unique style. Whether you're a seasoned designer or a DIY enthusiast, Homestyler provides the tools you need to visualize your ideas and bring them to life.</p>
+              </div>
+              <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4" >
+                  <h6 class="text-uppercase fw-bold mb-4">Products</h6>
+                  <p><a href="furniture.html" class="text-reset">Furniture</a></p>
+                  <p><a href="lighting.html" class="text-reset">Lighting</a></p>
+                  <p><a href="decor.html" class="text-reset">Decor</a></p>
+                  <p><a href="kitchen.html" class="text-reset">Kitchen</a></p>
+                  <p><a href="bathroom.html" class="text-reset">Bathroom</a></p>
+              </div>
+              <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                  <h6 class="text-uppercase fw-bold mb-4">Explore</h6>
+                  <p><a href="feedback.html" class="text-reset">Feedback</a></p>
+                  <p><a href="designstyle.html" class="text-reset">Categories</a></p>
+                  <p><a href="#!" class="text-reset">Gallery</a></p>
+                  <p><a href="home.html" class="text-reset">Home</a></p>
+              </div>
+              <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                  <h6 class="text-uppercase fw-bold mb-4">Information</h6>
+                  <p><a href="contact.html" class="text-reset">Contact Us</a></p>
+                  <p><a href="about.html" class="text-reset">About Us</a></p>
+                  <p><a href="#!" class="text-reset">Reviews</a></p>
+              </div>
+          </div>
+      </div>
+  </section>
+
+</div>
+<!-- Footer -->
+ <script src="search.js"></script>
+<link rel="stylesheet" href="css/bootstrap.js">
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+<!-- Script for Filter Functionality -->
+<script>
+  function applyFilters() {
+      const maxPrice = document.getElementById('filterPrice').value;
+      const selectedStyle = document.getElementById('filterStyle').value;
+      const cards = document.querySelectorAll('#designCards .col-lg-4');
+
+      cards.forEach(card => {
+          const cardPrice = parseInt(card.getAttribute('data-price'));
+          const cardStyle = card.getAttribute('data-style');
+
+          const isPriceValid = maxPrice === '' || cardPrice <= maxPrice;
+          const isStyleValid = selectedStyle === '' || cardStyle === selectedStyle;
+
+          if (isPriceValid && isStyleValid) {
+              card.style.display = ''; // Show the card
+          } else {
+              card.style.display = 'none'; // Hide the card
+          }
+      });
+  }
+  </script>
+</body>
+</html>

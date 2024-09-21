@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+    .card{
+        box-shadow: 0px 2px 5px black;
+        transition: transform 0.5s;
+        cursor: pointer;
+        
+    
+    }
+    .card:hover{
+        transform: translate(-15px);
+    }
+    .productHolder
+    {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 10px;
+    }
+    .card{
+        cursor: pointer;
+        display: flex;
+        background-color: #d4cfb9;
+        flex-direction: column;
+        min-width: 200px;    
+        max-width: 300px;
+        text-align: center;
+        min-height: 370px;
+        border-radius: 1rem;
+        margin: 1.5rem;
+        transition: 0.3s;
+        height: 500px;
+        width: 500px;
+    
+        &:hover{
+            transform: scale(1.1);
+           
+       }   
+       .cardtext{
+        margin:0.srem;
+       }
+    }
+</style>
+</head>    
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+            <img src="images/logo 1 (2).png" alt="Logo" style="width: 150px; height: 50px;">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="home.html">Home</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="categories.html" id="categoriesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"  style="color: white;">Categories</a>
+                    <ul class="dropdown-menu" aria-labelledby="categoriesDropdown">
+                        <li><a class="dropdown-item" href="liveroom.html" style="color: white;">Living Room</a></li>
+                        <li><a class="dropdown-item" href="kitchen.html" style="color: white;" >Kitchen</a></li>
+
+                        <li><a class="dropdown-item" href="bedroom.html" style="color: white;">Bedroom</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Feedback.html" style="color: white;">Feedback</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html" style="color: white;">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html" style="color: white;">About</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="product.html" id="productDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"  style="color: white;">Product</a>
+                    <ul class="dropdown-menu" aria-labelledby="productDropdown">
+                       
+                      <li><a class="dropdown-item" href="furniture.html"   style="color: white;">Furniture</a></li>
+                      <li><a class="dropdown-item" href="lighting.html"  style="color: white;">Lighting</a></li>
+                     
+                      <li><a class="dropdown-item" href="decor.html"  style="color: white;">Decor</a></li>
+                      <li><a class="dropdown-item" href="prokitchen.html"  style="color: white;">Kitchen</a></li>
+                      <li><a class="dropdown-item" href="bathroom.html"  style="color: white;">Bathroom</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <form class="d-flex" aria-label="Product Search">
+                        <input class="form-control me-2" type="search" placeholder="Search Products" aria-label="Search">
+                        <button class="btn btn-outline-light" type="submit">Search</button>
+                    </form>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+    <h2 style="text-align: center;"><B>KITCHEN</B></h2>
+    <h3 style="text-align: center;"><B>CABINETS & PANTRIES</B></h3>
+    <div class="container">
+    <div class="productHolder">
+    <div class="card">
+      <img src="Images/chair/CABINETS 1.webp" style="border-radius: 1rem;" alt="bed">
+     <div class="cardText"> 
+     <p class="categoryText">white with metal  </p>
+     <h2 class="brandtext">CABINETS </h2>
+     <h5>⭐⭐⭐⭐ </h5>
+     <a href="prokitchen.html"></a>
+     <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+    </div>
+    </div>
+    
+    
+    <div class="card">
+      <img src="Images/chair/CABINETS 2.webp" style="border-radius: 1rem;" alt="bed">
+     <div class="cardText"> 
+     <p class="categoryText">grey with metal</p> 
+     <h2 class="brandtext">CABINETS</h2>
+     <h5>⭐⭐⭐⭐ </h5>
+     <a href=""></a>
+     <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+    </div>
+    </div>
+    
+    <div class="card">
+      <img src="Images/chair/CABINETS 3.avif" style="border-radius: 1rem;" alt="bed">
+     <div class="cardText"> 
+     <p class="categoryText">wood cabinets </p>
+     <h2 class="brandtext">CABINETS</h2>
+     <h5>⭐⭐⭐⭐ </h5>
+     <a href=""></a>
+     <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+    </div>
+    </div>
+    <div class="card">
+      <img src="Images/chair/PANTRY 1.jpg" style="border-radius: 1rem; "  alt="bed">
+     <div class="cardText"> 
+     <p class="categoryText">drawer with shelf </p>
+     <h2 class="brandtext">PANTRIES</h2>
+     <h5>⭐⭐⭐⭐ </h5>
+     <a href=""></a>
+     <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+    </div>
+    </div>
+    
+    <div class="card">
+      <img src="Images/chair/PANTRY 2.jfif" style="border-radius: 1rem; " alt="bed">
+     <div class="cardText"> 
+     <p class="categoryText">shelf pentry </p>
+     <h2 class="brandtext">PANTRIES</h2>
+     <h5>⭐⭐⭐⭐ </h5>
+     <a href=""></a>
+     <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+    </div>
+    </div>
+    <div class="card">
+      <img src="Images/chair/PANTRY 3.jpg" style="border-radius: 1rem; height: 300px;" alt="bed">
+     <div class="cardText"> 
+     <p class="categoryText">shelf pentry </p>
+     <h2 class="brandtext">PANTRIES</h2>
+     <h5>⭐⭐⭐⭐ </h5>
+     <a href=""></a>
+     <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+    </div>
+    </div>
+    </div>
+    
+    
+    <H2 style="text-align: center;"><B>COUNTERTOPS & BACKSPLASHES</B></H2>
+    <div class="productHolder">
+    <div class="card">
+      <img src="Images/chair/COPUNTERTOPS 1.jpg" style="border-radius: 1rem;" alt="bed">
+     <div class="cardText"> 
+     <p class="categoryText">peach countertop </p>
+     <h2 class="brandtext">COUNTERTOPS</h2>
+     <h5>⭐⭐⭐⭐ </h5>
+     <a href=""></a>
+     <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+    </div>
+    </div>
+    
+    
+    <div class="card">
+      <img src="Images/chair/COUNTERTOPS 2.jpg" style="border-radius: 1rem;" alt="bed">
+     <div class="cardText"> 
+     <p class="categoryText"> white countertop </p>
+     <h2 class="brandtext">COUNTERTOPS</h2>
+     <h5>⭐⭐⭐⭐ </h5>
+     <a href=""></a>
+     <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+    </div>
+    </div>
+    
+    <div class="card">
+      <img src="Images/chair/COUNTERTOPS 3.jpg" style="border-radius: 1rem;" alt="bed">
+     <div class="cardText"> 
+     <p class="categoryText">white countertop </p>
+     <h2 class="brandtext">COUNTERTOPS</h2>
+     <h5>⭐⭐⭐⭐ </h5>
+     <a href=""></a>
+     <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+    </div>
+    </div>
+    <div class="card">
+      <img src="Images/chair/BACK 1.jpg" style="border-radius: 1rem; "  alt="bed">
+     <div class="cardText"> 
+     <p class="categoryText">white blacksplash </p>
+     <h2 class="brandtext">BACKSPLASHES</h2>
+     <h5>⭐⭐⭐⭐ </h5>
+     <a href=""></a>
+     <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+    </div>
+    </div>
+    
+    <div class="card">
+      <img src="Images/chair/BACK 2.webp" style="border-radius: 1rem; " alt="bed">
+     <div class="cardText"> 
+     <p class="categoryText">grey blacksplash</p>
+     <h2 class="brandtext">BACKSPLASHES</h2>
+     <h5>⭐⭐⭐⭐ </h5>
+     <a href=""></a>
+     <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+    </div>
+    </div>
+    <div class="card">
+      <img src="Images/chair/BACK 3.jfif" style="border-radius: 1rem; height: 300px;" alt="bed">
+     <div class="cardText"> 
+     <p class="categoryText">peach and grey </p>
+     <h2 class="brandtext">DBACKSPLASHES</h2>
+     <h5>⭐⭐⭐⭐ </h5>
+     <a href=""></a>
+     <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+    </div>
+    </div>
+    </div>
+    
+    <H2 style="text-align: center;"><B>SINKS & FAUCETS</B></H2>
+    <div class="productHolder">
+    <div class="card">
+      <img src="Images/chair/SINK 1.jpg" style="border-radius: 1rem;" alt="bed">
+     <div class="cardText"> 
+     <p class="categoryText">grey sink </p>
+     <h2 class="brandtext">SINKS</h2>
+     <h5>⭐⭐⭐⭐ </h5>
+     <a href=""></a>
+     <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+    </div>
+    </div>
+    
+    
+    <div class="card">
+      <img src="Images/chair/SINK 2.jpg" style="border-radius: 1rem;" alt="bed">
+     <div class="cardText"> 
+     <p class="categoryText">silver sink </p>
+     <h2 class="brandtext">SINKS</h2>
+     <h5>⭐⭐⭐⭐ </h5>
+     <a href=""></a>
+     <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+    </div>
+    </div>
+    
+    <div class="card">
+      <img src="Images/chair/SINK 3.jpg" style="border-radius: 1rem;" alt="bed">
+     <div class="cardText"> 
+     <p class="categoryText">grey sink </p>
+     <h2 class="brandtext">SINKS</h2>
+     <h5>⭐⭐⭐⭐ </h5>
+     <a href=""></a>
+     <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+    </div>
+    </div>
+    <div class="card">
+      <img src="Images/chair/F 1.avif" style="border-radius: 1rem; "  alt="bed">
+     <div class="cardText"> 
+     <p class="categoryText">silver with side 2 taps</p>
+     <h2 class="brandtext">FAUCETS</h2>
+     <h5>⭐⭐⭐⭐ </h5>
+     <a href=""></a>
+     <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+    </div>
+    </div>
+    
+    <div class="card">
+      <img src="Images/chair/F 2.jpg" style="border-radius: 1rem; " alt="bed">
+     <div class="cardText"> 
+     <p class="categoryText">black faucet</p>
+     <h2 class="brandtext">FAUCETS</h2>
+     <h5>⭐⭐⭐⭐ </h5>
+     <a href=""></a>
+     <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+    </div>
+    </div>
+    <div class="card">
+      <img src="Images/chair/F 3.webp" style="border-radius: 1rem; height: 300px;" alt="bed">
+     <div class="cardText"> 
+     <p class="categoryText">white and silver</p>
+     <h2 class="brandtext">FAUCETS</h2>
+     <h5>⭐⭐⭐⭐ </h5>
+     <a href=""></a>
+     <p class="offer" style="font-style: oblique font; color: #ff0000;">70% off</p>
+    </div>
+    </div>
+    </div>
+  </div>
+  <section id="footer"></section>
+  <footer class="text-center text-lg-start text-muted" style="background-color:green; ">
+        <!-- Section: Links -->
+        <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom"></section>
+
+        <section class="main-footer">
+            <div class="container text-center text-md-start mt-5">
+                <div class="row mt-3">
+                    <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                        <h6 class="text-uppercase fw-bold mb-4"><i class="fas fa-gem me-3"></i>HOMESTYLER</h6>
+                        <p>At Homestyler, we believe that every space has the potential to be beautiful and functional. Our platform empowers you to unleash your creativity and transform your home into a reflection of your unique style. Whether you're a seasoned designer or a DIY enthusiast, Homestyler provides the tools you need to visualize your ideas and bring them to life.</p>
+                    </div>
+                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <h6 class="text-uppercase fw-bold mb-4">Products</h6>
+                        <p><a href="#!" class="text-reset">Furniture</a></p>
+                        <p><a href="#!" class="text-reset">Lighting</a></p>
+                        <p><a href="#!" class="text-reset">Decor</a></p>
+                        <p><a href="#!" class="text-reset">Kitchen</a></p>
+                        <p><a href="#!" class="text-reset">Bathroom</a></p>
+                    </div>
+                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <h6 class="text-uppercase fw-bold mb-4">Explore</h6>
+                        <p><a href="#!" class="text-reset">Feedback</a></p>
+                        <p><a href="#!" class="text-reset">Categories</a></p>
+                        <p><a href="#!" class="text-reset">Gallery</a></p>
+                        <p><a href="#!" class="text-reset">Home</a></p>
+                    </div>
+                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                        <h6 class="text-uppercase fw-bold mb-4">Information</h6>
+                        <p><a href="#!" class="text-reset">Contact Us</a></p>
+                        <p><a href="#!" class="text-reset">About Us</a></p>
+                        <p><a href="#!" class="text-reset">Reviews</a></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+       
+    </footer>
+</section>
+   
+    <link rel="stylesheet" href="css/bootstrap.js">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+</body>
+</html>
